@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Fun Page — Walnut Creek Concept</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<style>
+  .paywall-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 180px 20px 100px;
+    text-align: center;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 60px 0;
+    text-align: left;
+  }
+  .price-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: var(--shadow-sm);
+  }
+  .price-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+  }
+  .price-amount {
+    font-size: 3.5rem;
+    font-family: var(--display);
+    font-weight: 700;
+    margin: 20px 0;
+    color: var(--accent);
+  }
+  .price-amount span { font-size: 1.2rem; color: var(--text-muted); font-family: var(--text); }
+  .features { list-style: none; margin-bottom: 30px; }
+  .features li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted);
+  }
+  .features i { color: var(--primary); }
+
+  /* Objection Terminal (Light Mode adapted) */
+  .terminal {
+    background: #1C2B26;
+    border: 1px solid #111B18;
+    border-radius: 12px;
+    text-align: left;
+    overflow: hidden;
+    margin-top: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  }
+  .terminal-header {
+    background: #111B18;
+    padding: 12px 20px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #000;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot.r { background: #ff5f56; } .dot.y { background: #ffbd2e; } .dot.g { background: #27c93f; }
+  .terminal-body { padding: 30px; color: #4af626; line-height: 1.6; }
+  .cursor { display: inline-block; width: 10px; height: 1.2em; background: #4af626; animation: blink 1s step-end infinite; vertical-align: bottom; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .lever-btn {
+    background: linear-gradient(135deg, var(--accent), #D4AF37);
+    border: none; padding: 20px 40px; border-radius: 100px;
+    color: #FFF; font-family: var(--text); font-weight: 700;
+    font-size: 1.1rem; cursor: pointer; transition: 0.2s;
+    box-shadow: 0 10px 30px rgba(184, 144, 53, 0.3);
+    margin-top: 60px; text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .lever-btn:active { transform: scale(0.95); }
+  .falling-pet { position: fixed; top: -50px; font-size: 2.5rem; pointer-events: none; animation: fall 3s linear forwards; z-index: 9999; }
+  @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+
+  .runaway-btn {
+    position: relative;
+    margin-top: 40px;
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid #A0B2AA;
+    color: var(--text-muted);
+    border-radius: 100px;
+    transition: 0.2s;
+    font-family: var(--text);
+  }
+</style>
+</head>
+<body>
+<div class="ambient-glow"></div>
+
+<a href="index.html" class="btn btn-glass" style="position:fixed; top:30px; left:30px; z-index:100; padding: 12px 24px;"><i class="ph ph-arrow-left"></i> Back to Concept</a>
+
+<div class="paywall-wrap reveal">
+  <div class="hero-tag">06 / The Honest Page</div>
+  <h1 class="text-gradient">You found the <i class="text-gold">fun page.</i></h1>
+  <p class="hero-desc" style="margin:0 auto;">Everything you just scrolled through was built as a free concept. That was zero conversations with you. Imagine the version where you actually point at things and say "more of that."</p>
+
+  <div class="pricing-grid">
+    <div class="price-card reveal delay-1">
+      <div class="hero-tag" style="background: var(--primary); color: #FFF; border: none;">The Smart Money</div>
+      <h3>We Work Together</h3>
+      <div class="price-amount">$50<span>/mo</span></div>
+      <p style="color:var(--text-muted); margin-bottom:20px;">I host it, maintain it, and it quietly stays excellent while you run the clinic.</p>
+      <ul class="features">
+        <li><i class="ph-fill ph-check-circle"></i> Hosting included</li>
+        <li><i class="ph-fill ph-check-circle"></i> Unlimited tweaks (just email me)</li>
+        <li><i class="ph-fill ph-check-circle"></i> No meetings unless you want them</li>
+        <li><i class="ph-fill ph-check-circle"></i> Cancel anytime, zero hard feelings</li>
+      </ul>
+      <a href="mailto:thomas@thomasharden.com" class="btn btn-primary" style="width:100%;">Let's Do It</a>
+    </div>
+
+    <div class="price-card reveal delay-2">
+      <div class="hero-tag">The Buyout</div>
+      <h3>Take It All</h3>
+      <div class="price-amount">$250<span> flat</span></div>
+      <p style="color:var(--text-muted); margin-bottom:20px;">The whole concept — code, design, everything — handed over with a bow on it.</p>
+      <ul class="features">
+        <li><i class="ph-fill ph-check-circle"></i> Full source code</li>
+        <li><i class="ph-fill ph-check-circle"></i> One round of revisions included</li>
+        <li><i class="ph-fill ph-check-circle"></i> Walkthrough call</li>
+        <li><i class="ph-fill ph-check-circle"></i> Runs on your current hosting provider</li>
+      </ul>
+      <a href="mailto:thomas@thomasharden.com" class="btn btn-glass" style="width:100%;">I'll Take It</a>
+    </div>
+  </div>
+
+  <div class="terminal reveal delay-3">
+    <div class="terminal-header">
+      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+      <span style="color:#A3B5AE; font-size:12px; margin-left:10px;">objection_handler.sh</span>
+    </div>
+    <div class="terminal-body">
+      > chris: "Our pictures are very old, as we have remodeled and the people and clinic are very different now."<br><br>
+      > thomas: "That's perfectly fine! The great thing about this setup is how easy it is to update. Whenever you get those new pictures later this year, just email them to me and I'll drop them in. You focus on the clinic, I'll keep the site looking fresh."<br><br>
+      <span class="cursor"></span>
+    </div>
+  </div>
+
+  <button class="lever-btn reveal" id="merchLever"><i class="ph-fill ph-paw-print" style="margin-right: 8px;"></i> PULL THE TREAT LEVER</button>
+  <p style="color:var(--text-muted); margin-top:10px; font-family:var(--text); font-size: 0.9rem;">// deploys a carefully measured amount of digital pets</p>
+
+  <div style="min-height: 100px; margin-top: 60px;">
+    <button class="runaway-btn" id="runaway">Let me think about it</button>
+  </div>
+</div>
+
+<script>
+// Scroll Reveal
+const reveals = document.querySelectorAll('.reveal');
+window.addEventListener('scroll', () => {
+  reveals.forEach(reveal => {
+    if (reveal.getBoundingClientRect().top < window.innerHeight - 50) {
+      reveal.classList.add('active');
+    }
+  });
+});
+setTimeout(() => reveals.forEach(r => r.classList.add('active')), 100);
+
+// Treat Lever
+const lever = document.getElementById('merchLever');
+const items = ['🐕','🐈','🐾','🦴','🎾','🦜','🐇','🩺'];
+let pulls = 0;
+lever.addEventListener('click', () => {
+  pulls++;
+  for(let i=0; i<30; i++) {
+    const el = document.createElement('div');
+    el.className = 'falling-pet';
+    el.textContent = items[Math.floor(Math.random() * items.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
+    el.style.animationDelay = (Math.random() * 0.5) + 's';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 4000);
+  }
+  if (pulls === 3) lever.innerHTML = "<i class='ph-fill ph-paw-print' style='margin-right: 8px;'></i> Okay, one more time";
+  if (pulls === 4) lever.innerHTML = "<i class='ph-fill ph-paw-print' style='margin-right: 8px;'></i> The kennels are empty";
+  if (pulls > 4) { lever.disabled = true; lever.textContent = "Out of treats"; lever.style.opacity = 0.5; }
+});
+
+// Runaway button
+const runaway = document.getElementById('runaway');
+let dodges = 0;
+runaway.addEventListener('mouseenter', () => {
+  if (dodges < 2) {
+    dodges++;
+    runaway.style.transform = `translateX(${dodges === 1 ? '100px' : '-100px'})`;
+  }
+});
+runaway.addEventListener('click', () => {
+  if (dodges >= 2) {
+    runaway.style.transform = 'none';
+    runaway.textContent = "Fine. The inbox will be here when you're ready.";
+    runaway.disabled = true;
+  }
+});
+</script>
+</body>
+</html>
