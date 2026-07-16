@@ -256,21 +256,21 @@ footer { background: #FFF; padding: 100px 0 40px; border-top: 1px solid rgba(0,0
   
   .badge-card { bottom: -10px !important; left: 10px !important; right: 10px !important; transform: none !important; width: auto; justify-content: center; padding: 15px !important; }
 
-  /* Horizontal scrolling carousels for mobile to fix the long scroll */
-  .stats-grid, .services-grid, .reviews-grid, .gallery-grid { 
-    display: flex; flex-wrap: nowrap; overflow-x: auto; 
-    scroll-snap-type: x mandatory; padding-bottom: 20px; gap: 15px; 
-    margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px;
-    -webkit-overflow-scrolling: touch; scrollbar-width: none;
-  }
-  .stats-grid::-webkit-scrollbar, .services-grid::-webkit-scrollbar, .reviews-grid::-webkit-scrollbar, .gallery-grid::-webkit-scrollbar { display: none; }
+  /* Fixed Mobile Grid Layouts */
+  .stats-grid, .reviews-grid, .footer-grid, .gallery-grid { grid-template-columns: 1fr; gap: 20px; }
   
-  .glass-card, .review-card, .photo-placeholder, .gallery-img { 
-    min-width: 80vw; scroll-snap-align: center; padding: 24px !important; flex: 0 0 auto;
-  }
-  .gallery-img { padding: 0 !important; }
+  /* Dense grid for services to save vertical space */
+  .services-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+  .services-grid .glass-card { padding: 16px !important; text-align: center; }
+  .service-icon { width: 40px; height: 40px; font-size: 1.2rem; margin: 0 auto 12px; }
+  .services-grid h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .services-grid p { font-size: 0.85rem; line-height: 1.3; }
+
+  /* Reduce general paddings */
+  .glass-card, .review-card, .photo-placeholder { padding: 24px !important; }
+  .gallery-img { padding: 0 !important; height: 200px; }
+  .photo-placeholder { min-height: 200px; }
   
-  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
   .spotlight-wrapper { flex-direction: column; padding: 30px 20px; text-align: center; }
   
   h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); }
