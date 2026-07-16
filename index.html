@@ -18,7 +18,7 @@
       <img src="http://walnutcreekvets.com/wp-content/uploads/2014/06/logo-wcac1.png" alt="Walnut Creek Logo" style="height: 45px; width: auto;">
       <span style="color: var(--primary); font-family: var(--display); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.02em;">Walnut Creek <span>Vets</span></span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="#about">Our Mission</a>
       <div class="nav-dropdown">
         <a href="#services">Services <i class="ph ph-caret-down"></i></a>
@@ -40,8 +40,14 @@
         </div>
       </div>
       <a href="paywall.html" style="color: var(--accent); font-weight: 700; padding: 8px 16px; background: var(--accent-glow); border-radius: 100px;">Concept details</a>
+      <a href="tel:817-473-1168" class="btn btn-primary" style="padding: 14px 28px; display: none;" id="mobileCallBtn">Call Us</a>
     </nav>
-    <a href="tel:817-473-1168" class="btn btn-primary" style="padding: 14px 28px;">Call Us</a>
+    <div style="display: flex; align-items: center; gap: 20px;">
+      <a href="tel:817-473-1168" class="btn btn-primary nav-call-btn" style="padding: 14px 28px;">Call Us</a>
+      <div class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="ph ph-list" style="font-size: 2.2rem; color: var(--primary);"></i>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -57,12 +63,14 @@
         <a href="#about" class="btn btn-glass">Discover More</a>
       </div>
     </div>
-    <div class="reveal delay-1 hero-image-wrapper" style="flex: 1; min-width: 350px;">
-      <img src="http://walnutcreekvets.com/wp-content/uploads/2017/09/DSC_00102-staffweb-1.jpg" alt="Walnut Creek Staff" style="width: 100%; height: auto; display: block; object-fit: cover;">
+    <div class="reveal delay-1" style="flex: 1; min-width: 350px; position: relative;">
+      <div class="hero-image-wrapper">
+        <img src="https://walnutcreekvets.com/wp-content/uploads/2017/09/DSC_00102-staffweb-1.jpg" alt="Walnut Creek Staff" style="width: 100%; height: auto; display: block; object-fit: cover;">
+      </div>
       
       <!-- Floating Badge -->
-      <div class="glass-card" style="position: absolute; bottom: -20px; left: -20px; padding: 20px; display: flex; gap: 15px; align-items: center; transform: rotate(-2deg); box-shadow: var(--shadow-lg);">
-        <img src="http://walnutcreekvets.com/wp-content/uploads/2019/02/American-animal-hospital-association-logo.png" alt="AAHA" style="height: 40px;">
+      <div class="glass-card badge-card" style="position: absolute; bottom: -20px; left: -20px; padding: 20px; display: flex; gap: 15px; align-items: center; transform: rotate(-2deg); box-shadow: var(--shadow-lg); z-index: 10;">
+        <img src="https://walnutcreekvets.com/wp-content/uploads/2019/02/American-animal-hospital-association-logo.png" alt="AAHA" style="height: 40px;">
         <div>
           <p style="font-weight: 700; color: var(--primary); line-height: 1.2;">AAHA Accredited</p>
           <p class="text-muted" style="font-size: 0.85rem;">Excellence in medicine</p>
@@ -289,6 +297,13 @@
 </footer>
 
 <script>
+// Mobile Menu Toggle
+const mobileBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+mobileBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
 // Scroll Reveal Animation
 const reveals = document.querySelectorAll('.reveal');
 const revealOnScroll = () => {

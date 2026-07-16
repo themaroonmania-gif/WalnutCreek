@@ -215,10 +215,35 @@ footer { background: #FFF; padding: 100px 0 40px; border-top: 1px solid rgba(0,0
 .footer-link { display: block; color: var(--text-muted); margin-bottom: 16px; transition: 0.3s; font-weight: 500; }
 .footer-link:hover { color: var(--primary); transform: translateX(8px); }
 
+.mobile-menu-btn { display: none; cursor: pointer; }
+
 @media (max-width: 1000px) {
-  .hero-content { text-align: center; margin: 0 auto; }
+  .nav-inner { position: relative; }
+  .nav-call-btn { display: none; }
+  .mobile-menu-btn { display: block; }
+  #mobileCallBtn { display: inline-flex !important; margin-top: 10px; width: 100%; }
+
+  .nav-links {
+    position: absolute; top: 100%; left: 0; width: 100%;
+    background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-lg);
+    flex-direction: column; align-items: stretch; gap: 10px;
+    padding: 30px 20px; opacity: 0; visibility: hidden; transition: 0.3s;
+  }
+  .nav-links.active { opacity: 1; visibility: visible; }
+  .nav-dropdown:hover .dropdown-menu { position: relative; left: 0; top: 0; box-shadow: none; border: none; padding: 10px 0 0 20px; background: transparent; }
+
+  .hero { padding-top: 140px; }
+  .hero-content { text-align: center; margin: 0 auto; flex: 100%; }
   .hero-actions { justify-content: center; }
-  .nav-links { display: none; }
-  .footer-grid { grid-template-columns: 1fr; gap: 50px; }
-  .spotlight-wrapper { flex-direction: column; padding: 40px; text-align: center; }
+  .hero-image-wrapper { flex: 100%; }
+  
+  .badge-card { bottom: -10px !important; left: 10px !important; right: 10px !important; transform: none !important; width: auto; justify-content: center; padding: 15px !important; }
+
+  .stats-grid, .services-grid, .reviews-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .spotlight-wrapper { flex-direction: column; padding: 40px 20px; text-align: center; }
+  
+  h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+  h2 { font-size: clamp(2rem, 6vw, 2.5rem); }
+  .section { padding: 80px 0; }
 }
