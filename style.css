@@ -154,11 +154,13 @@ h3 { font-size: 1.8rem; margin-bottom: 12px; }
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px; }
 
 /* Compressed Services Grid */
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 40px; }
-.services-grid .glass-card { padding: 24px; }
+.services-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; margin-top: 40px; }
+.services-grid .glass-card { padding: 24px 15px; text-align: center; }
+.services-grid h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.services-grid p { font-size: 0.85rem; line-height: 1.3; }
 .service-icon {
   width: 50px; height: 50px; border-radius: 16px; background: var(--accent-glow);
-  display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
   color: var(--accent); font-size: 1.5rem; border: 1px solid rgba(196, 154, 69, 0.3);
   transition: 0.4s;
 }
