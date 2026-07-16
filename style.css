@@ -152,11 +152,14 @@ h3 { font-size: 1.8rem; margin-bottom: 12px; }
 
 /* Features & Grids */
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 60px; }
+
+/* Compressed Services Grid */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 40px; }
+.services-grid .glass-card { padding: 24px; }
 .service-icon {
-  width: 70px; height: 70px; border-radius: 20px; background: var(--accent-glow);
-  display: flex; align-items: center; justify-content: center; margin-bottom: 30px;
-  color: var(--accent); font-size: 2.2rem; border: 1px solid rgba(196, 154, 69, 0.3);
+  width: 50px; height: 50px; border-radius: 16px; background: var(--accent-glow);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+  color: var(--accent); font-size: 1.5rem; border: 1px solid rgba(196, 154, 69, 0.3);
   transition: 0.4s;
 }
 .glass-card:hover .service-icon { transform: scale(1.1) rotate(5deg); background: var(--accent); color: #FFF; }
@@ -201,6 +204,19 @@ h3 { font-size: 1.8rem; margin-bottom: 12px; }
 }
 .resource-card:hover { background: #FFF; transform: translateX(10px); border-color: var(--accent); }
 .resource-img { width: 80px; height: 60px; border-radius: 12px; overflow: hidden; }
+
+/* Photo Gallery & Placeholders */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 60px; }
+.photo-placeholder {
+  background: rgba(34, 66, 53, 0.03); border: 2px dashed rgba(34, 66, 53, 0.15);
+  border-radius: var(--radius); display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 40px; text-align: center; color: var(--text-muted);
+  min-height: 250px; transition: 0.3s; cursor: pointer;
+}
+.photo-placeholder:hover { background: rgba(34, 66, 53, 0.06); border-color: var(--accent); color: var(--accent); transform: scale(1.02); }
+.gallery-img { border-radius: var(--radius); overflow: hidden; height: 250px; box-shadow: var(--shadow-sm); }
+.gallery-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease-out-expo); }
+.gallery-img:hover img { transform: scale(1.05); }
 
 /* Reveal Animations */
 .reveal { opacity: 0; transform: translateY(50px); transition: all 1.2s var(--ease-out-expo); }
